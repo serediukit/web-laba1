@@ -1,0 +1,28 @@
+{
+  "name": "laba1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "eslint:fix": "eslint . --fix --ignore-path .gitignore",
+    "eslint:check": "eslint . --ignore-path .gitignore",
+    "format:fix": "prettier --write . --ignore-path .gitignore --ignore-path .prettierignore",
+    "format:check": "prettier --check . --ignore-path .gitignore --ignore-path .prettierignore",
+    "stylelint:fix": "stylelint \"**/*.css\" --fix --ignore-path .gitignore",
+    "stylelint:check": "stylelint \"**/*.css\" --ignore-path .gitignore",
+    "all:fix": "npm run eslint:fix && npm run format:fix && npm run stylelint:fix",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.4.1",
+    "eslint-plugin-sonarjs": "^0.11.0",
+    "husky": "^7.0.4",
+    "prettier": "2.5.1",
+    "sonarjs": "^1.0.0",
+    "stylelint": "^14.1.0",
+    "stylelint-config-standard": "^24.0.0"
+  }
+}
