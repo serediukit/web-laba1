@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+:root {
+  --blue-hover: rgb(45 47 138);
+  --text-block-bg: #ffd;
+  --white: #fff;
+  --black: #000;
+  --red: red;
+  --blue: blue;
+  --green: green;
+  --white-smoke: whitesmoke;
+  --yellow: yellow;
+  --grey: grey;
+  --aqua: aqua;
+  --brown: brown;
+  --darkslateblue: darkslateblue;
+  --lightsalmon: lightsalmon;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-areas:
+    "header header header"
+    "topSidebar content content"
+    "sidebar content content"
+    "footer footer footer";
+  grid-template-columns: 0.6fr 2fr 1fr;
+  grid-template-rows: 0.6fr 0.3fr 1.5fr 0.7fr;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: "Roboto Mono", monospace;
+  overflow-x: hidden;
+}
+
+header {
+  grid-area: header;
+  background-color: var(--red);
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+header div,
+footer div {
+  width: 900px;
+  text-align: left;
+  color: var(--text-block-bg);
+  margin-right: 40px;
+  word-break: break-word;
+}
+
+h2.quote {
+  padding: 10px;
+  border: 1px solid var(--black);
+  width: fit-content;
+  border-radius: 10px;
+  background-color: var(--white-smoke);
+}
+
+.sidebarTop {
+  grid-area: topSidebar;
+  background-color: var(--brown);
+}
+
+nav {
+  background: var(--green);
+  grid-area: sidebar;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: var(--yellow);
+  grid-area: content;
+  display: grid;
+  grid-template-areas:
+    "main main rightSidebar"
+    "main main rightSidebar"
+    "mainFooter mainFooter rightSidebar";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr 0.3fr;
+}
+
+.content {
+  grid-area: main;
+  background-color: var(--aqua);
+}
+
+.rightSidebar {
+  grid-area: rightSidebar;
+  background-color: var(--lightsalmon);
+}
+
+.contentFooter {
+  grid-area: mainFooter;
+  background-color: var(--brown);
+}
+
+main article {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--blue);
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+}
+
+nav ul li {
+  display: block;
+  padding: 5px;
+  border: 1px solid var(--white);
+  color: var(--white);
+  width: 150px;
+  margin: 10px 0;
+  border-radius: 8px;
+  transition: opacity 0.8s ease;
+  text-align: center;
+}
+
+.contacts ul li {
+  display: block;
+  padding: 5px;
+  height: 32px;
+  min-width: 200px;
+}
+
+nav ul li:hover {
+  background: var(--white);
+  color: var(--black);
+  transition: all 0.8s ease;
+}
+
+nav ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contacts {
+  font-size: 22px;
+}
+
+.contacts ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.contacts ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.active {
+  background-color: var(--white);
+  color: var(--green);
+}
+
+.active:hover,
+.active a:hover {
+  cursor: default;
+}
+
+.contacts ul li a:hover {
+  color: var(--blue-hover);
+  font-size: 23px;
+}
