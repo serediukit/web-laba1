@@ -1,1 +1,1 @@
-web-laba1.vercel.app
+https://web-laba1.vercel.app
